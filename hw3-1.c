@@ -8,12 +8,11 @@ for(j=2;j<i;j++)
 {
 if(i%j==0)
 {
-printf("No");
+printf("NO");
 break;
 }
 }
 if(i==j)
-printf("Yes");
+printf("YES");
 }
-
 
