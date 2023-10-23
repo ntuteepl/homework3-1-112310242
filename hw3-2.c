@@ -1,17 +1,28 @@
 #include <stdio.h>
-#include <stdlib.h>
-int main(){
-    int a,b;
-    scanf("%d%d",&a,&b);
-    int z=a/1000,x=a/100-z*10,c=a/10-x*10,v=a/1-c*10,q=b/1000,w=b/100-q*10,e=b/10-w*10,r=b/1-e*10;
-    if(z+x+c+v>q+w+e+r)
-        printf("%d",b);
-    else if(z+x+c+v<q+w+e+r)
-        printf("%d",a);
-    else{
-        if(a>b)
-            printf("%d",b);
-        else if(a<b)
-            printf("%d",a);
+int main() {
+    int s1, d1, s2, d2, s3, d3;
+    scanf("%d %d %d %d %d %d", &s1, &d1, &s2, &d2, &s3, &d3);
+    
+    int c ; 
+    if((d1<=s2&&d2<=s3)||(d2<=s3&&d3<=s1)||(d3<=s2&&d2<=s1)||
+    (d1<=s3&&d3<=s2)||(d2<=s1&&d1<=s3)||(d3<=s1&&d1<=s2))
+    {
+        c=1;
     }
+    
+    else if((s1<d2&&s1<d3&&d1>s2&&d1>s3)||(s2<d1&&s2<d3&&d2>s1&&d2>s3)||
+    (s3<d2&&s3<d2&&d3>s2&&d3>s1)) { 
+    if((s2<=d3&&d2<=s3)||(s2<=d1&&d2<=s1)||(s1<=d3&&d1<=s3)||
+    (s1<=d2&&d1<=s2)||(s3<=d2&&d3<=s2)||(s3<=d1&&d3<=s1))
+        {c=2;
+        }
+    else{
+        c=3;
+    }
+    }
+    else {
+        c=2;
+    }
+    
+    printf("%d", c);
 }
